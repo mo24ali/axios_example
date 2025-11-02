@@ -83,51 +83,92 @@
 //     }
 //     )
 //POST
-    // const newUser = {
-    //     name: 'ali',
-    //     client: 'true'
-    // }
+// const newUser = {
+//     name: 'ali',
+//     client: 'true'
+// }
 
-    // axios.post("https://jsonplaceholder.typicode.com/users", newUser)
-    //     .then(res => {
-    //         console.log(res.data);
-    //         console.log('success');
-    //     })
-    //     .catch(error => {
-    //         console.log(error);
-    //         console.log('error');
+// axios.post("https://jsonplaceholder.typicode.com/users", newUser)
+//     .then(res => {
+//         console.log(res.data);
+//         console.log('success');
+//     })
+//     .catch(error => {
+//         console.log(error);
+//         console.log('error');
 
-    //     }
-    //     )
+//     }
+//     )
 //PUT
 
-    // const newUser1 = {
-    //     name: 'Moali',
-    //     client: 'true'
-    // }
+// const newUser1 = {
+//     name: 'Moali',
+//     client: 'true'
+// }
 
-    // axios.put("https://jsonplaceholder.typicode.com/users/1", newUser1)
-    //     .then(res => {
-    //         console.log(res.data);
-    //         console.log('success');
-    //     })
-    //     .catch(error => {
-    //         console.log(error);
-    //         console.log('error');
+// axios.put("https://jsonplaceholder.typicode.com/users/1", newUser1)
+//     .then(res => {
+//         console.log(res.data);
+//         console.log('success');
+//     })
+//     .catch(error => {
+//         console.log(error);
+//         console.log('error');
 
-    //     }
-    //     )
+//     }
+//     )
 
 
 //DELETE
-      axios.delete("https://jsonplaceholder.typicode.com/users/1")
-        .then(res => {
-            console.log(res.data);
-            console.log('success');
-        })
-        .catch(error => {
-            console.log(error);
-            console.log('error');
+//   axios.delete("https://jsonplaceholder.typicode.com/users/1")
+//     .then(res => {
+//         console.log(res.data);
+//         console.log('success');
+//     })
+//     .catch(error => {
+//         console.log(error);
+        console.log('error');
 
+//     }
+//     )
+
+
+// Concrete example of GET
+axios.get("https://jsonplaceholder.typicode.com/users")
+    .then(res => { //in here axios always run it if the code status is between 200 and 299 if not it automatically jump to catch
+        let users = res.data;
+        let list = document.getElementById("users-list");
+        list.innerHTML = ""
+
+        for (let user of users) {
+            const li = document.createElement("li");
+            li.innerHTML = `<strong> name :  ${user.name} email : ${user.email} id : ${user.id}  </strong>`;
+            li.onclick = () => alert(`You clicked on ${user.name}`);
+            list.appendChild(li);
         }
-        )
+    })
+    .catch(error => {
+        console.log(error);
+        alert('error');
+
+    }
+    )
+
+//concrete example of Post
+//  const newUser = {
+//     name: 'ali',
+//     email: 'test@test.test'
+// }
+
+// axios.post("https://jsonplaceholder.typicode.com/users", newUser)
+//     .then(res => {
+//         let newUser = res.data;
+//         let list = document.getElementById("users-list");
+//         list.innerHtml += `<li><strong> name :  ${newUser.name} email : ${newUser.email} id : ${newUser.id}  </strong></li>`
+//     })
+//     .catch(error => {
+//         console.log(error);
+//         console.log('error');
+
+//     }
+//     )
