@@ -6,7 +6,7 @@
 </h4>
 
 <h2>
-    checkout the documentation for more infos : https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js
+    checkout the documentation for more infos : https://axios-http.com/docs/intro
 </h2>
 
 <h1>
